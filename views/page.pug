@@ -1,0 +1,22 @@
+extends ./layout.pug
+include ./mixins/_columns.pug
+
+block prepend body 
+  body(data-wio-id=pageContent.id)
+
+  include ./partials/header.pug
+
+  div.page-content
+    div.container.title_block
+      h1.title
+        != PrismicDOM.RichText.asText(pageContent.data.title)
+    div.container.content_block.row
+      for slice in pageContent.data.page_content
+        case slice.slice_type
+          when 'text_section'
+            include ./partials/text-section.pug
+          when 'full_width_image'
+            include ./partials/full-width-image.pug
+          when 'list_block'
+            include ./partials/listblock.pug
+  

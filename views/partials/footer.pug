@@ -1,0 +1,19 @@
+footer
+  //- p
+  //-   | this is a footer  
+  if footerContent != null
+    ul.row
+      li.email.hoverable 
+        a(href="mailto:teddersr@hotmail.com") 
+          != PrismicDOM.RichText.asText(footerContent.data.email)
+      li.linkedn.hoverable
+        a(href=PrismicDOM.RichText.asText(footerContent.data.linkedin))
+          i.fa.fa-linkedin-square.fa-lg(aria-hidden='true')
+      li.phone
+        != PrismicDOM.RichText.asText(footerContent.data.phone_number)
+  //- if pageContent.id === 'XjGBPRQAACUAKqPr'
+  //-   div.wrapper
+  //-     canvas#canvas
+  //-       p Your browser does not support this game.
+  //-       p Please change to a more modern browser
+  //-   script(src="/scripts/runner.js")

@@ -1,0 +1,10 @@
+if menuContent != null
+    nav.nav
+        .container
+            .close_button.hoverable &times;
+            ul.nav-ul
+                each menuLink in menuContent.data.menu_links
+                    li.navitem.hoverable
+                        a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver)).hoverable
+                            != PrismicDOM.RichText.asText(menuLink.label)
+//-script(src="/scripts/fluid.js" type="module")

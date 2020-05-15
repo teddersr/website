@@ -1,0 +1,50 @@
+doctype html(lang='en')
+
+head
+  title Raymond Tedders
+  link(href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic', rel='stylesheet', type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', rel='stylesheet', type='text/css')
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
+  link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet')
+  link(rel='icon' href='/images/favicon.ico' type='/image/x-icon')
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+
+  link(rel="stylesheet", href="/stylesheets/styles.min.css")
+
+  // Required for Previews and Experiments
+  script(src="//code.jquery.com/jquery-2.1.1.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" type='application/javascript' charset='utf-8')
+
+  script(src="/scripts/three.js" )
+  
+body
+
+
+
+  block body 
+  
+    #menuContainer.hoverable
+      span(style='font-size:30px;cursor:pointer') &#9776;
+  
+  include ./partials/footer.pug
+
+  //- .cursor
+  //-   .cursor__ball.cursor__ball--big
+  //-     svg(height="30" width="30")
+  //-       circle(cx="15" cy="15" r="12" stroke-width="0")
+  //-   .cursor__ball.cursor__ball--small
+  //-     svg(height="10" width="10")
+  //-       circle(cx="5" cy="5" r="4" stroke-width="0")
+        
+  //-script(src="/scripts/cursor.js" )
+  script(src="/scripts/nav.js" )
+  //- script(src="/scripts/oglcursor.js" type="module")
+  
+  script(async src="https://www.googletagmanager.com/gtag/js?id=UA-165947738-1")
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-165947738-1');
+
+

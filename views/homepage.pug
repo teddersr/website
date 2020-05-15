@@ -1,0 +1,33 @@
+extends ./layout.pug
+include ./mixins/_columns.pug
+
+block prepend body
+  body.homepage
+    
+    include ./partials/header.pug
+       
+    // Content Section
+    section.page-content
+        .container
+          h1.title
+            != PrismicDOM.RichText.asText(pageContent.data.pagetitle)
+        .container
+        for slice in pageContent.data.page_content
+          case slice.slice_type
+            when 'full_width_image'
+              .container.imageblock
+                .profile_pic
+                  - var imURL = slice.primary.image.url
+                  img(src=imURL)
+            when 'text_section'
+              .container.bottom
+                .main_text
+                  != PrismicDOM.RichText.asText(slice.primary.rich_text)
+                small (Click my face) 
+                br
+                small.restart Restart
+    
+    script(src="/scripts/three.js")
+    script(src="/scripts/DecalGeometry.js")
+    //- script(src="/scripts/OrbitControls.js")
+    script(src="/scripts/homepage.js")

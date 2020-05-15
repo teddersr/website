@@ -1,0 +1,69 @@
+mixin column(item)
+    if(item.items.length===1)
+        div.col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12
+            for entry in item.items
+                if(entry.columntitle)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntitle) 
+                if(entry.columntext)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntext)
+                if(entry.columnimage) 
+                    +picture(entry.columnimage)
+    else if(item.items.length===2)
+        for entry in item.items
+            div.col-xl-6.col-lg-6.col-md-6.col-sm-6.col-xs-6
+                if(entry.columntitle)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntitle) 
+                if(entry.columntext)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntext)
+                if(entry.columnimage) 
+                    +picture(entry.columnimage)
+    else if(item.items.length===2)
+        for entry in item.items
+            div.col-xl-4.col-lg-4.col-md-4.col-sm-4.col-xs-4
+                if(entry.columntitle)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntitle) 
+                if(entry.columntext)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntext)
+                if(entry.columnimage) 
+                    +picture(entry.columnimage)
+    else if(item.items.length===2)
+        for entry in item.items
+            div.col-xl-3.col-lg-3.col-md-3.col-sm-3.col-xs-3
+                if(entry.columntitle)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntitle) 
+                if(entry.columntext)
+                    div
+                        != PrismicDOM.RichText.asText(entry.columntext)
+                if(entry.columnimage) 
+                    +picture(entry.columnimage)
+
+
+
+
+
+mixin picture(image)
+    -var desktopURL = (image.desktop) ? image.desktop.url : image.url
+    -var smallerDesktopURL = (image.smaller_desktop) ? image.smaller_desktop.url : false
+    -var tabletURL = (image.tablet) ? image.tablet.url : false
+    -var mobileURL = (image.mobile) ? image.mobile.url : false
+
+    picture
+        if mobileURL
+            source(media='(max-width: 550px)', srcset=mobileURL)
+        if tabletURL
+            source(media='(max-width: 991px)', srcset=tabletURL)
+        if smallerDesktopURL
+            source(media='(max-width: 1200px)', srcset=smallerDesktopURL)
+        source(srcset=desktopURL)
+        img(
+            src=desktopURL
+            alt=image.alt || ''
+            copyright=image.copyright || false
+        )
