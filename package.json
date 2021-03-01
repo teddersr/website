@@ -37,7 +37,7 @@
     "pug": "^2.0.0-alpha6",
     "request": "^2.88.2",
     "serve-favicon": "~2.4.3",
-    "three": "^0.115.0"
+    "three": "^0.125.0"
   },
   "repository": {
     "type": "git",
