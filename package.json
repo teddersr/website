@@ -34,7 +34,7 @@
     "ogl": "0.0.43",
     "prismic-dom": "^2.0.0",
     "prismic-javascript": "^1.2.0",
-    "pug": "^2.0.0-alpha6",
+    "pug": "^3.0.1",
     "request": "^2.88.2",
     "serve-favicon": "~2.4.3",
     "three": "^0.115.0"
